@@ -7,7 +7,7 @@
 #   Last Updated:   September 29th, 2020                                        |
 #   Condition:      In progress                                                 |
 #-------------------------------------------------------------------------------|
-#   Time Spent Programming: 0 hour(s) 0 minute(s) 0 second(s)                   |
+#   Time Spent Programming: 0 hour(s) 49 minute(s) 27 second(s)                 |
 #-------------------------------------------------------------------------------|
 
 
