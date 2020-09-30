@@ -7,7 +7,7 @@
 #   Last Updated:   September 29th, 2020                                        |
 #   Condition:      In progress                                                 |
 #-------------------------------------------------------------------------------|
-#   Time Spent Programming: 1 hour(s) 20 minute(s) 58 second(s)                 |
+#   Time Spent Programming: 1 hour(s) 31 minute(s) 21 second(s)                 |
 #-------------------------------------------------------------------------------|
 
 
@@ -15,18 +15,18 @@ import json
 
 
 # Load words from json file
-wordDatabase    = open('words_dictionary.json')
-dictionary      = []
-wordCount       = 370100
-currentCount    = 0
-
-# load each word in the databse into a list for quicker checking
-for word in json.load(wordDatabase):
-    dictionary.append(word)
-    currentCount += 1
-    # Print percentage of words laoded
-    print(f"\r{int((currentCount/wordCount)*100)}% of words loaded", end="")
-print()
+# wordDatabase    = open('words_dictionary.json')
+# dictionary      = []
+# wordCount       = 370100
+# currentCount    = 0
+#
+# # load each word in the databse into a list for quicker checking
+# for word in json.load(wordDatabase):
+#     dictionary.append(word)
+#     currentCount += 1
+#     # Print percentage of words laoded
+#     print(f"\r{int((currentCount/wordCount)*100)}% of words loaded", end="")
+# print()
 
 
 # Add spaces after every punctuation
@@ -51,3 +51,17 @@ for line in originalFile:
 newFile = open('tmp.txt', 'w')
 newFile.write(newString)
 newFile.close()
+
+
+# Save each phrase in temp file to a list
+allPhrases      = []
+tempFile        = open('tmp.txt', 'r')
+currentPhrase   = ""
+
+for line in tempFile:
+    for character in line:
+        if character != " ":
+            currentPhrase += character
+        else:
+            allPhrases.append(currentPhrase)
+            currentPhrase = ""
