@@ -5,16 +5,16 @@
 #-------------------------------------------------------------------------------|
 
 # Function for finding all words in a string
-def FindAllWords(phrase, dictionary):
-
+def FindAllWords(callCount, phrase, dictionary, sentences):
+    sentences[callCount] = []
     word = ""
 
     for count in range(0, len(phrase)):
+        # Add one character at a time
         word += phrase[count].lower()
 
         # Check if current sentence is in the dictionary
         if word in dictionary:
-            print(f"Word found: {sentence}")
-            FindAllWords(phrase[(count+1):], dictionary)
-
-    return sentence
+            sentences[callCount].append(word)
+            sentences.append([])
+            FindAllWords(callCount, phrase[(count+1):], dictionary, sentences)

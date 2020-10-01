@@ -7,7 +7,7 @@
 #   Last Updated:   September 29th, 2020                                        |
 #   Condition:      In progress                                                 |
 #-------------------------------------------------------------------------------|
-#   Time Spent Programming: 1 hour(s) 54 minute(s) 59 second(s)                 |
+#   Time Spent Programming: 2 hour(s) 54 minute(s) 59 second(s)                 |
 #-------------------------------------------------------------------------------|
 
 
@@ -27,6 +27,7 @@ for word in json.load(wordDatabase):
     currentCount += 1
     # Print percentage of words laoded
     print(f"\r{int((currentCount/wordCount)*100)}% of words loaded", end="")
+print()
 print()
 
 
@@ -69,4 +70,12 @@ for line in tempFile:
 
 
 # Search through each phrase
-FindAllWords(allPhrases[0], dictionary)
+sentences = [[]]
+FindAllWords(0, allPhrases[0], dictionary, sentences)
+
+for x in range(0,len(sentences)):
+    print(f"Sentence {x}:")
+    for y in sentences[x]:
+        print(y, end=" ")
+    print()
+    print()
